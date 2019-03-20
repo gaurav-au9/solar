@@ -1,0 +1,126 @@
+/************************************
+            By Dan Harper
+        http://www.danharper.me
+
+           For NETTUTS.com
+
+     Check out http://vivawp.com
+************************************/
+
+/** {
+	margin: 0;
+	padding: 0;
+}
+*/
+/*body {
+	font-size: 75%;
+	color: #222;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+}*/
+
+.widget {
+	width: 675px;
+	border: 1px solid b6c4da;
+	background-image: url(../../images/tab-img.html);
+	background-repeat: repeat-x;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+	/*line-height: 2.7em;*/
+}
+
+	.widget a {
+	color: #222;
+	text-decoration: none;
+	}
+	
+	.widget a:hover {
+	color: #203F68;
+	text-decoration: none;
+	}
+
+	.tabnav li {
+	display: inline;
+	list-style: none;
+	padding-right: 5px;
+	}
+	
+		.tabnav li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #2b2b2b;
+	outline: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	height: 36px;
+	width: 68px;
+	padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 9px;
+	padding-left: 8px;
+		}
+		
+		.tabnav li a:hover, .tabnav li a:active, .tabnav li.ui-tabs-selected a {
+	color: #db9a04;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #dddedd;
+	border-right-color: #dddedd;
+	border-bottom-color: #dddedd;
+	border-left-color: #dddedd;
+		}
+		
+	.tabdiv {
+	background: #fff;
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #dedbd1;
+	border-right-color: #dedbd1;
+	border-bottom-color: #dedbd1;
+	border-left-color: #dedbd1;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+	
+		.tabdiv li {
+		list-style-image: url("../star.html");
+		margin-left: 20px;
+		}
+
+.ui-tabs-hide {
+		display: none;
+		}
+
+		#featuredvid {
+		text-align: center;
+		}
+		
+			.fvid {
+			margin-bottom: 5px;
+			}
+		
+			.vidselector li {
+			text-align: left;
+			list-style: none;
+			padding: 5px;
+			background: #ffffff;
+			border: 1px solid #dedbd1;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			}

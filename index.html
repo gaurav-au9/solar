@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Suryakant Energy ::  Home</title>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="includes/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        
+        <link href="includes/css/style.css" rel="stylesheet" type="text/css" />
+
+		<link rel='stylesheet' type='text/css' href='includes/css/dropdown.css' />
+		<script src='../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+		<script type='text/javascript' src='menu_jquery.html'></script>
+        
+        	<link rel="stylesheet" href="includes/nivo-slider/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="includes/nivo-slider/themes/light/light.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="includes/nivo-slider/themes/dark/dark.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="includes/nivo-slider/themes/bar/bar.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="includes/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="includes/nivo-slider/demo/style.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="includes/nivo-slider/demo/scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="includes/nivo-slider/jquery.nivo.slider.js"></script>
+    <script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+    <!--Slider -->
+    <script type="text/javascript">
+	$.fn.infiniteCarousel = function () {
+	
+		function repeat(str, num) {
+			return new Array( num + 0 ).join( str );
+		}
+	  
+		return this.each(function () {
+			var $wrapper = $('> div', this).css('overflow', 'hidden'),
+				$slider = $wrapper.find('> ul'),
+				$items = $slider.find('> li'),
+				$single = $items.filter(':first'),
+				
+				singleWidth = $single.outerWidth(), 
+				visible = Math.ceil($wrapper.innerWidth() / singleWidth), // note: doesn't include padding or border
+				currentPage = 1,
+				pages = Math.ceil($items.length / visible);            
+	
+	
+			// 1. Pad so that 'visible' number will always be seen, otherwise create empty items
+			if (($items.length % visible) != 0) {
+				$slider.append(repeat('<li class="empty" />', visible - ($items.length % visible)));
+				$items = $slider.find('> li');
+			}
+	
+			// 2. Top and tail the list with 'visible' number of items, top has the last section, and tail has the first
+			$items.filter(':first').before($items.slice(- visible).clone().addClass('cloned'));
+			$items.filter(':last').after($items.slice(0, visible).clone().addClass('cloned'));
+			$items = $slider.find('> li'); // reselect
+			
+			// 3. Set the left position to the first 'real' item
+			$wrapper.scrollLeft(singleWidth * visible);
+			
+			// 4. paging function
+			function gotoPage(page) {
+				var dir = page < currentPage ? -1 : 1,
+					n = Math.abs(currentPage - page),
+					left = singleWidth * dir * visible * n;
+				
+				$wrapper.filter(':not(:animated)').animate({
+					scrollLeft : '+=' + left
+				}, 500, function () {
+					if (page == 0) {
+						$wrapper.scrollLeft(singleWidth * visible * pages);
+						page = pages;
+					} else if (page > pages) {
+						$wrapper.scrollLeft(singleWidth * visible);
+						// reset back to start position
+						page = 1;
+					} 
+	
+					currentPage = page;
+				});                
+				
+				return false;
+			}
+			
+			$wrapper.after('<a class="arrow back">&lt;</a><a class="arrow forward">&gt;</a>');
+			
+			// 5. Bind to the forward and back buttons
+			$('a.back', this).click(function () {
+				return gotoPage(currentPage - 1);                
+			});
+			
+			$('a.forward', this).click(function () {
+				return gotoPage(currentPage + 1);
+			});
+			
+			// create a public interface to move to a specific page
+			$(this).bind('goto', function (event, page) {
+				gotoPage(page);
+			});
+		});  
+	};
+	
+	$(document).ready(function () {
+	  $('.infiniteCarousel').infiniteCarousel();
+	});
+	</script>
+    
+    
+    <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+</head>
+
+<body>
+		<div class="main">
+        		<div class="top-black">
+                		<a href="index.html">Home</a>  |  <a href="sitemap/index.html">Sitemap</a> |  <a href="disclaimar/index.html">Disclaimer</a> </div>
+<div class="logo-box">
+   		  		  <div class="all-images"><a href="index.html"><img src="LOGO1.jpg" /></a></div>
+                  <div class="logo-right-part">Business Enquiry: <a href="#">info@suryantenergy.com</a></div>
+          </div>
+                <div class="nav">
+                		<div id='cssmenu'>
+                        <ul>
+                           <li class='active has-sub'><a href='index-2.html'><span>Company</span></a>
+                              <ul>
+                                 <li><a href='about-us.html'><span>About Us</span></a></li>
+                                
+                                
+                             </ul>
+                           </li>
+                           <li class='has-sub'><a href='#'><span>Products</span></a>
+                              <ul>
+                                 <li class='has-sub'><a href='#'><span>Solar Power Pack</span></a>
+                                    <ul>
+                                       <li><a href='solar-home-lighting.html'><span>Solar Home Lighting System</span></a></li>
+                                      <li><a href='solar-lantern.html'><span>Solar Lantern</span></a></li>
+                                      <li><a href='solar-street-light.html'><span>Solar Street Light</span></a></li>
+                                     
+                                   </ul>
+                                 </li>
+                                 <li><a href='solar-industrial.html'><span>Solar Industrial Electrification</span></a></li>
+                                <li class='last'><a href='rural-electrification.html'><span>Rural Electrification Through Solar Power Plant</span></a></li>
+                             </ul>
+                           </li>
+                           
+                             
+                           <li class='has-sub'><a href='#'><span>Solutions</span></a>
+                              <ul>
+                                 <li><a href='school-collage.html'><span>Schools & Colleges</span></a></li>
+                                <li><a href='hospital-health.html'><span>Hospitals & Health Clinics</span></a></li>
+                                <li><a href='telecom.html'><span>Telecom</span></a></li>
+                                <li><a href='bank-atm.html'><span>Banks & ATM</span></a></li>
+                              
+                               
+                                <li class='last'><a href='petrol-pump.html'><span>Petrol Pumps</span></a></li>
+                             </ul>
+                           </li>
+                           
+                           <li><a href='contact-us.html'><span>Contact</span></a>
+                              
+                        </div>
+   		  </div>
+                <div class="all-images">
+                		<div class="slider-wrapper theme-default">
+                                       <div id="slider" class="nivoSlider"> 
+									   <img src="solar/top5.jpg" alt="" data-thumb="solar/solar.jpg"  height="281px" width=""/>
+                                             <img src="solar/top4.jpg" alt="" data-thumb="images/images.gif"  height="281px"/>
+											 
+                                         	
+                                             <img src="solar/top3.jpg" alt="" data-thumb="solar/solar.jpg"  height="281px" width=""/>
+                                             <img src="solar/banner1.png" alt="" data-thumb="solar/solar.jpg"  height="281px"/>
+											 <img src="solar/top7.jpg" alt="" data-thumb="solar/solar.jpg"  height="281px"/>
+											 <img src="solar/top8.jpg" alt="" data-thumb="solar/solar.jpg"  height="281px"/>
+                                       </div>
+                  </div>
+          </div>
+                <div class="body-text">
+   	  <div class="body-text-left-box">
+                		<div class="body-text-left">
+                        		<span>
+                                		<h1>Suryant Energy is one of the leading solar panel manufacturers in Patna</h1>
+                                        <p>Suryant Energy PVT. Limited (SEPL) is amongst the largest, most experienced and reputed solar photovoltaic & thermal companies in Patna. We design, manufacture, build and operate solar photovoltaic (PV) & thermal systems and plants varying from KW scale to multi - MW scale. All the projects are designed and integrated as per guidelines of Ministry Of New and Renewable Energy(MNRE) and also as per the best global practices. The systems are designed to meet diversified needs- from rural electrification to powering urban growth areas, defence outposts to banking centres, residential apartments to industrial complex - in all sectors, we offer the most efficient and innovative solar systems along with attractive government subsidies and finance options.</p>
+                                </span>        </div>
+<div class="product">
+                        		<h3>Products</h3>
+                                <img src="solar/solar.jpg" width="210px" height="118px" />
+                                <p>Suryant Energy with the help of its R & D team brings wide variety of innovative solar and thermal products for urban and rural electrification....</p>
+                                <a href="products/solar-pv/modules-inverters-controllers/index.html">view more Products [+]</a>                        </div>
+                        <div class="product">
+                        		<h3>Solutions</h3>
+                                <img src="solar/SOLUTION.jpg" width="210px" height="118px" />
+                                <p>Suryant Energy provides optimized business solutions to the different sectors as per the different parameters applicable to them...</p>
+                                <a href="solutions/schools-%26-colleges/index.html">view more Solutions [+]</a>                  		</div>
+                        <div class="product">
+                        		<h3>Projects</h3>
+                                <img src="solar/ncc.jpg" width="210px" height="118px" />
+                                <p>Suryant Energy with its expertise had successfully completed projects all over India and is concentrating on expansion of its network...</p>
+                          <a href="projects/solar-pv/index.html">view more Projects [+]</a>                        </div>
+               	  </div>
+                    <div class="body-text-right">
+                    	<i class="fa fa-chevron-circle-right"></i>
+                        <h3>News</h3><br /><br />
+						<marquee behavior="scroll" direction="up" scrolldelay="1sec">
+                        <ul>
+						<li>He plants to be bring solar light to 500 school in boring road patna...[+]</li>
+						<li>All Bank partnership with Suryakant Energy -Business standard...[+]</li>
+						<li>Suryakant Energy powering the defense sector- Energy Next...[+]</li>
+						<li>SEPL - January's 15 Issue...</li>
+						<li>SEPL - December's 27 Issue...</li>
+						<li>SEPL - November's 9 Issue...</li>
+						<li>SEPL - September's 14 Issue...</li>
+						</ul>
+						</marquee>
+						
+                        <h3>Downloads</h3>
+                        <span class="body-text-right-l"><img src="images/bullet.gif" width="4" height="4" style="padding-bottom:2px; padding-right:5px;" /><a href="pdf/corporate_brochure.pdf" target="_blank">Company profile</a></span> 
+                        <span class="body-text-right-l"><img src="images/bullet.gif" width="4" height="4" style="padding-bottom:2px; padding-right:5px;" /><a href="pdf/product%20catalogue.pdf" target="_blank">Product Catalogue</a></span>
+                        <span class="body-text-right-l"><img src="images/bullet.gif" width="4" height="4" style="padding-bottom:2px; padding-right:5px;" /><a href="pdf/solar_thermal_brochure.pdf" target="_blank">Thermal Brochure</a></span>
+                        <span class="body-text-right-l"><img src="images/bullet.gif" width="4" height="4" style="padding-bottom:2px; padding-right:5px;" /><a href="#" target="_blank">Newsletter</a></span>
+                  </div> 
+          </div>
+          <div class="footer">
+       		<div class="footer-box">
+<table width="959" border="0" align="center" cellpadding="0" cellspacing="0">
+                          <tr>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Company</td>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Products</td>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Projects</td>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Solutions</td>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Media</td>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Contact Us</td>
+                            <td rowspan="3" align="left" valign="bottom"><img src="images/line.gif" width="1" height="130" style="padding-left:11px; padding-right:9px;" /></td>
+                            <td align="left" valign="top"><i class="fa fa-chevron-circle-right"></i> Follow us</td>
+                          </tr>
+                          <tr>
+                            <td colspan="6" align="left" valign="top">&nbsp;</td>
+                            <td align="left" valign="top">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top"><a href="about-us.html">About Us</a><br />
+   							  <a href="company/management-team/index.html">Management Team</a><br />
+   							                              </td>
+<td align="left" valign="top">
+		    <a href="products/solar-pv/modules-inverters-controllers/index.html">Solar Power Pack</a><br />
+               							  <a href="solar-industrial.html">Solar Industrial Electrification</a><br />
+						   
+							
+							
+							<a href="solar-home-lighting.html">Solar Home Lighting System</a><br />
+							<a href="solar-lantern.html">Solar Lantern</a><br />
+							<a href="solar-street-light.html">Solar Street Light</a>
+							
+							</td>
+<td align="left" valign="top">
+
+
+
+               							  <a href="#">Solar Power Pack</a><br />
+						    <a href="#">Solar Thermal</a><br /></td>
+                            <td align="left" valign="top">
+                              <a href="school-collage.html">Schools &amp; Colleges</a><br />
+                              <a href="hospital-health.html">Hospitals &amp; Healts Clinies</a><br />
+                              <a href="telecom.html">Telecom</a><br />
+                              <a href="bank-atm.html">Banks &amp; Aim</a><br />
+                             
+                            <a href="petrol-pump.html">Petrol Pumps</a><br />                            </td>
+<td align="left" valign="top">
+            <a href="#">News</a><br />
+            <a href="#">Press Releases</a> <br />
+                            							  <a href="#">Events</a>                            </td>
+<td align="left" valign="top">
+            <a href="contact-us.html">Contact</a><br />
+            <a href="#">Career</a><br />
+                                                          <a href="contact-us.html">Business Enquiry</a>                            </td>
+                            <td align="left" valign="top"><img src="images/smi.gif" width="193" height="37" border="0" usemap="#Map" /></td>
+        </tr>
+              </table>
+            </div>
+                <table width="995" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td align="center" valign="middle"><img src="images/line2.gif" width="995" height="1" style="padding-top:20px; padding-bottom:11px;" /></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" class="footer-text">© Suryant Energy All Rights Reserved. |  Designed & Developed by <a href="" target="_blank">Vapp technology</a></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" class="footer-text">&nbsp;</td>
+                  </tr>
+            </table>
+          </div>
+        </div>
+
+<map name="Map" id="Map"><area shape="rect" coords="157,0,200,37" href="#" target="_blank" />
+<area shape="rect" coords="80,1,116,35" href="#" target="_blank" />
+<area shape="rect" coords="119,1,155,36" href="#" />
+<area shape="rect" coords="38,0,77,41" href="#" />
+<area shape="rect" coords="1,0,37,37" href="#" />
+</map></body>
+
+
+</html>
